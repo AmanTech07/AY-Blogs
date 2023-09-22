@@ -1,5 +1,6 @@
 {
   "name": "react-blog",
+  "proxy": "http://127.0.0.1:5000/api",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -36,6 +37,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "https://ay-blogs-kmmavnlhb-amantech07.vercel.app/api/"
+  }
 }
