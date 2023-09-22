@@ -9,7 +9,7 @@ export default function Post({ post }) {
       {post.photo && <img className="postImg" src={post.photo} alt="" />}
       <div className="postInfo">
         <div className="postCats">
-          {post.categories.map((c) => (
+          {post.categories.length>0 && post.categories.map((c) => (
             <span className="postCat">{c.name}</span>
           ))}
         </div>
