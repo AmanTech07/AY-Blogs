@@ -19,6 +19,12 @@ app.use((req, res, next) => {
   next();
 });
 
+
+app.use("/api/auth", authRoute);
+app.use("/api/users", userRoute);
+app.use("/api/posts", postRoute);
+app.use("/api/categories", categoryRoute);
+
 // -----------------------
 const __dirname1 = path.resolve();
 
@@ -35,12 +41,12 @@ if (process.env.NODE_ENV==='production') {
 }
 // ---------------------------
 
-app.use(
-  cors({
-    origin: ['https://650df8304dc514331077f6a7--dulcet-pasca-6e0d3e.netlify.app/'],    
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: ['https://650df8304dc514331077f6a7--dulcet-pasca-6e0d3e.netlify.app/'],    
+//     credentials: true,
+//   })
+// );
 
 mongoose
   .connect('mongodb+srv://amantechmsy:GU92YuBSGXVAUGDg@cluster0.y35mqbz.mongodb.net/?retryWrites=true&w=majority', {
@@ -66,10 +72,7 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("File has been uploaded");
 });
 
-app.use("/api/auth", authRoute);
-app.use("/api/users", userRoute);
-app.use("/api/posts", postRoute);
-app.use("/api/categories", categoryRoute);
+
 
 app.listen("5000", () => {
   console.log("Backend is running.");
