@@ -10,7 +10,7 @@ export default function Sidebar() {
     const getCats = async () => {
       const res = await axios.get("/api/categories");
       console.log(res.data);
-      // setCats(res.data);
+      setCats(res.data);
     };
     getCats();
   }, []);
@@ -30,11 +30,11 @@ export default function Sidebar() {
       <div className="sidebarItem">
         <span className="sidebarTitle">CATEGORIES</span>
         <ul className="sidebarList">
-          {/* {cats.length>0 && cats.map((c) => (
+          {cats.length>0 && cats.map((c) => (
             <Link to={`/?cat=${c.name}`} className="link">
             <li className="sidebarListItem">{c.name}</li>
             </Link>
-          ))} */}
+          ))}
         </ul>
       </div>
       <div className="sidebarItem">
