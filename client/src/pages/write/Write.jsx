@@ -33,7 +33,7 @@ export default function Write() {
             newPost.photo=url;
     }
     try {
-      const res = await axios.post("/posts", newPost);
+      const res = await axios.post("/api/posts", newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (err) {}
   };
