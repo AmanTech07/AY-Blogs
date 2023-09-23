@@ -22,7 +22,7 @@ export default function Settings() {
   const fetchCurrentUser=async()=>{
     try {
       const res = await axios.get('/api/users/'+user._id);
-      // console.log(res.data);
+      console.log(res.data);
       setEmail(res.data.email);
       setUsername(res.data.username);
       setprofilePic(res.data.profilePic);
